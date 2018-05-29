@@ -5,7 +5,8 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.define "jdc" do |jdc|
-    jdc.vm.box = "geerlingguy/ubuntu1604"
+    #jdc.vm.box = "geerlingguy/ubuntu1604"
+    jnt.vm.box = "ubuntu/xenial64"
     jdc.vm.network :private_network, ip: "192.168.33.39"
     jdc.ssh.insert_key = false
     jdc.vm.hostname = "jenkins.docker"
@@ -19,7 +20,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define "jnt" do |jnt|
-    jnt.vm.box = "geerlingguy/ubuntu1604"
+    #jnt.vm.box = "geerlingguy/ubuntu1604"
+    jnt.vm.box = "ubuntu/xenial64"    
     jnt.vm.network :private_network, ip: "192.168.33.40"
     jnt.ssh.insert_key = false
     jnt.vm.hostname = "jenkins.native"
